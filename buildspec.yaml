@@ -7,7 +7,7 @@ phases:
       - yum install unzip -y
       - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       - unzip awscliv2.zip
-      - sudo ./aws/install
+      - ./aws/install
       - aws --version
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 040479514035.dkr.ecr.us-east-1.amazonaws.com/getting-started
       - REPOSITORY_URI=040479514035.dkr.ecr.us-east-1.amazonaws.com/getting-started
