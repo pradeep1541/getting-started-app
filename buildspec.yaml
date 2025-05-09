@@ -4,6 +4,10 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
+      - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      - apt install unzip -y
+      - unzip awscliv2.zip
+      - sudo ./aws/install
       - aws --version
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 040479514035.dkr.ecr.us-east-1.amazonaws.com/getting-started
       - REPOSITORY_URI=040479514035.dkr.ecr.us-east-1.amazonaws.com/getting-started
